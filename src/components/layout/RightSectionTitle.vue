@@ -17,8 +17,8 @@ import IconExpanded from '../../assets/iconExpanded.svg?icon-component';
 
 export default {
   components: { IconExpanded },
-  computed: mapState(['useIframeWallet']),
   props: { open: Boolean },
+  computed: mapState(['useIframeWallet']),
 };
 </script>
 
