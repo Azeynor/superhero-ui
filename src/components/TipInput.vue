@@ -48,7 +48,7 @@
 </template>
 
 <script>
-import { mapState } from 'vuex';
+import { mapState, mapGetters } from 'vuex';
 import { get } from 'lodash-es';
 import iconTip from '../assets/iconTip.svg';
 import iconTipUser from '../assets/iconTipUser.svg';
@@ -85,7 +85,8 @@ export default {
     message: '',
   }),
   computed: {
-    ...mapState(['useSdkWallet', 'account', 'minTipAmount']),
+    ...mapState(['useSdkWallet', 'account']),
+    ...mapGetters('backend', ['minTipAmount']),
     ...mapState({
       derivedTipStats({ stats }) {
         return get(stats, 'by_url', []).find((tipStats) => tipStats.url === this.tipUrl);
